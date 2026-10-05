@@ -1,0 +1,91 @@
+/* colors I picked for the site */
+:root {
+  --dark: #1b2a41;
+  --accent: #7d908e;
+  --light: #f4f4f4;
+}
+
+/* basic setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--light);
+  color: #333;
+}
+
+/* header uses flexbox */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--dark);
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* about section uses flexbox */
+#about {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#about img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* projects use grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+article {
+  background: white;
+  padding: 15px;
+  border-top: 4px solid var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--dark);
+  color: white;
+}
+
+/* mobile layout */
+@media (max-width: 600px) {
+  header,
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
